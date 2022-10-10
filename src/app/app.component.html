@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <!--Above <a> "/" - to load our root route-->
+        <li role="presentation" routerLinkActive="active"><a routerLink="servers">Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['users']">Users</a></li>
+        <!--binding property binding to some non-string data. Has property binding is been used above for [routerLink] then users is declared as an array-->
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!--This is the place where u actually want to render your route, 
+      and so don't add ur component with its selector but add a special directive shipping with
+    Angular, the router-outlet. This looks like component but its still only a directive.-->
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
